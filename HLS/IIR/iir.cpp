@@ -13,4 +13,7 @@ void iir(float input, float *output, int size)
 {
 	//write your code here
 	
+	*output = input*b0+input_minus_one*b1 + output_minus_one*a1;
+	output_minus_one = *output;
+	input_minus_one = input;
 }
