@@ -6,7 +6,7 @@
 
 void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 {
-
+#pragma HLS pipeline
 	for(int i = 0; i <MYCOUNT-2; i+=2){
 		const float r1 = inputVector[i];
 		const float i1 = inputVector[i+1];
