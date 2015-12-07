@@ -33,7 +33,7 @@ void fir(float * result, float input, unsigned short do_filter)
 void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 {
 #pragma HLS pipeline II=1024
-	for(int i = 0; i <MYCOUNT-2; i+=2){
+	for(int i = 0; i <MYCOUNT-4; i+=2){
 		const float r1 = inputVector[i];
 		const float i1 = inputVector[i+1];
 		const float r2 = inputVector[i+2];
