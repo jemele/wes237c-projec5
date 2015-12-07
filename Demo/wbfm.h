@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MYCOUNT  YOU_SHOULD_CHANGE_IT_TO_A_NUMBER
+#define MYCOUNT  2048
 
 void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT]);
 void fir(float * result, float input, unsigned short do_filter);
