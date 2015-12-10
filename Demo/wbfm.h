@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MYCOUNT  64 // it is MYCOUNT/2 complex numbers
+#define MYCOUNT  128 // it is MYCOUNT/2 complex numbers
 
 void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT]);
 void fir(float * result, float input, unsigned short do_filter);
