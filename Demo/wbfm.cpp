@@ -106,14 +106,10 @@ void correct_quad(float * x, float * y, int * quad)
 
   float fast_atan(float x, float y)
   {
-	// write your code here
-	/* normalize to +/- 45 degree range */
-	const float y_abs = fabsf(y);
-	const float x_abs = fabsf(x);
-	/* don't divide by zero! */
-	if(!((y_abs > 0.0f) || (x_abs > 0.0f))) {
-		return 0.0;
-    }
+  	// This matches the gnuradio fast_atan behavior.
+	if ((x == 0.0f) && (y == 0.0f)) {
+		return 0.0f;
+	}
 
 	  	fix_num theta = 0;
 
