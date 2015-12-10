@@ -11,6 +11,6 @@ void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT]);
 void fir(float * result, float input, unsigned short do_filter);
 void iir(float input, float *output, int size);
 float fast_atan(float y, float x);
-void xillybus_wrapper(float *in, float *out);
+void wbfm(float *in, float *out);
 
 #endif

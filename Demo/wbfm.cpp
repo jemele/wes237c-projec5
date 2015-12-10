@@ -1,4 +1,5 @@
 #include"wbfm.h"
+#include "xilly_debug.h"
 
 /* FIR */
 //static int d_ntaps = 309;
@@ -325,14 +326,14 @@ inline void iir(float input, float *output, int size)
   }
 
 /* XILLYBUS WRAPPER */
-static float d_gain = 0.002122;
-
-void xillybus_wrapper(float *in, float *out)
+static const float d_gain = 0.002122;
+void wbfm(float *in, float *out)
 {
 #pragma AP interface ap_fifo port=in
 #pragma AP interface ap_fifo port=out
 #pragma AP interface ap_ctrl_none port=return
 #pragma HLS dataflow
+	xilly_puts("hello world\n");
 
 	float inf[MYCOUNT];
 	float outf[MYCOUNT];
