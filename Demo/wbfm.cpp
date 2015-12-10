@@ -117,7 +117,6 @@ void fir(float * result, float input, unsigned short do_filter)
 	//write your code here
 	float acc = 0;
 	for (int i=d_ntaps-1;i>=1;i--) {
-#pragma HLS unroll
 		shift[i]=shift[i-1];
 		acc+=shift[i]*taps[i];
 	}
@@ -137,7 +136,6 @@ void fir(float * result, float input, unsigned short do_filter)
 /* VOLK */
 inline void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 {
-#pragma HLS pipeline
 	for(int i = 0; i <MYCOUNT-4; i+=2){
 		const float r1 = inputVector[i];
 		const float i1 = inputVector[i+1];
@@ -337,11 +335,7 @@ void xillybus_wrapper(float *in, float *out)
 #pragma HLS dataflow
 
 	float inf[MYCOUNT];
-#pragma HLS ARRAY_PARTITION variable=inf complete dim=1
-
 	float outf[MYCOUNT];
-#pragma HLS ARRAY_PARTITION variable=outf complete dim=1
-
 	for (int i = 0; i < MYCOUNT; ++i) {
 #pragma HLS pipeline
 		inf[i] = *in++;
