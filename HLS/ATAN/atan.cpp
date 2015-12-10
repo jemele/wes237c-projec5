@@ -50,6 +50,9 @@ void correct_quad(float * x, float * y, int * quad)
   float fast_atan(float x, float y)
   {
 	// write your code here
+	if (x == 0.0f && y == 0.0f) {
+		return 0.0f;
+	}
 	  	fix_num theta = 0;
 
 	  	int quad = 0;
