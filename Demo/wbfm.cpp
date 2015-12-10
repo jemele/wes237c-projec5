@@ -10,11 +10,11 @@ static float result_holder = 0;
 
 void fir(float * result, float input, unsigned short do_filter)
 {
-#pragma HLS pipeline
+//#pragma HLS pipeline
 	//write your code here
 	float acc = 0;
 	for (int i=d_ntaps-1;i>=1;i--) {
-#pragma HLS unroll
+//#pragma HLS unroll
 		shift[i]=shift[i-1];
 		acc+=shift[i]*taps[i];
 	}
@@ -34,7 +34,7 @@ void fir(float * result, float input, unsigned short do_filter)
 /* VOLK */
 inline void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 {
-#pragma HLS pipeline II=1024
+//#pragma HLS pipeline
 	for(int i = 0; i <MYCOUNT-4; i+=2){
 		const float r1 = inputVector[i];
 		const float i1 = inputVector[i+1];
@@ -231,16 +231,16 @@ void xillybus_wrapper(float *in, float *out)
 #pragma AP interface ap_fifo port=in
 #pragma AP interface ap_fifo port=out
 #pragma AP interface ap_ctrl_none port=return
-#pragma HLS dataflow
+//#pragma HLS dataflow
 
 	float inf[MYCOUNT];
-#pragma HLS ARRAY_PARTITION variable=inf complete dim=1
+//#pragma HLS ARRAY_PARTITION variable=inf complete dim=1
 
 	float outf[MYCOUNT];
-#pragma HLS ARRAY_PARTITION variable=outf complete dim=1
+//#pragma HLS ARRAY_PARTITION variable=outf complete dim=1
 
 	for (int i = 0; i < MYCOUNT; ++i) {
-#pragma HLS pipeline
+//#pragma HLS pipeline
 		inf[i] = *in++;
 	}
 
@@ -248,13 +248,15 @@ void xillybus_wrapper(float *in, float *out)
 	volk(outf, inf);
 
 	for (int i = 0, j = 0; i < MYCOUNT-1; i=i+2, ++j) {
-#pragma HLS pipeline
+//#pragma HLS pipeline
 		const float c = fast_atan(outf[i+1], outf[i]); //image, real
 		const float d = d_gain * c;
 		float tempb;
 		fir(&tempb, d, j%4);
 		if (j%4 == 0) {
-		  iir(tempb, out++, 1);
+		  float result;
+		  iir(tempb, &result, 1);
+		  *out++ = result;
 		}
 	}
 }
