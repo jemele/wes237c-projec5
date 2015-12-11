@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MYCOUNT  128 // it is MYCOUNT/2 complex numbers
+#define MYCOUNT  16 // it is MYCOUNT/2 complex numbers
 
 void wbfm(float *in, float *out);
 
