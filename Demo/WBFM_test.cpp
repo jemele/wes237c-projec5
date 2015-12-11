@@ -28,7 +28,8 @@ int main()
 	}
 	fclose(fp_r);
 
-	xillybus_wrapper(inVec, outVec);
+	printf("running wbfm\n");
+	wbfm(inVec, outVec);
 
 	fp_r = fopen("golden.txt", "r");
 	if (fp_r == NULL)
