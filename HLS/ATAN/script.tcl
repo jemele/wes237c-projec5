@@ -7,7 +7,6 @@ open_project HLS
 set_top fast_atan
 add_files atan.cpp
 add_files atan.h
-add_files cordic.cpp
 add_files -tb atan_imag.txt
 add_files -tb atan_out.txt
 add_files -tb atan_real.txt
@@ -17,4 +16,5 @@ set_part {xc7z020clg484-1}
 create_clock -period 10 -name default
 source "./directives.tcl"
 csim_design
-#csynth_design
+csynth_design
+cosim_design

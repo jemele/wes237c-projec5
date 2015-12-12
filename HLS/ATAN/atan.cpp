@@ -1,39 +1,17 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ap_fixed.h>
 #include "atan.h"
-#include "cordic.h"
-
-#if 1
-
-  float fast_atan(float x, float y)
-  {
-	if ((x == 0.0f) && (y == 0.0f)) {
-		return 0.0f;
-	}
-
-  	fix_num r, theta;
-	cordic(fix_num(x), fix_num(y), &r, &theta);
-	return float(theta);
-  }
-
-#else
 
   /***************************************************************************/
-
   /* Constant definitions */
-
   /***************************************************************************/
-
 #define TAN_MAP_RES 0.003921549 /* (smallest non-zero value in table) */
 #define RAD_PER_DEG 0.017453293
 #define TAN_MAP_SIZE 255
 
   /* arctangents from 0 to pi/4 radians */
-
-  static float
-
+  static const float
   fast_atan_table[257] = {
 		  0.000000000, 0.003921549, 0.007842976, 0.011764160,
 		  0.015684990, 0.019605330, 0.023525070, 0.027444090,
@@ -103,39 +81,24 @@
   };
 
   /*****************************************************************************
-
    Function: Arc tangent
-
-
    Syntax: angle = fast_atan2(y, x);
 
    float y y component of input vector
-
    float x x component of input vector
-
    float angle angle of vector (x, y) in radians
 
-
    Description: This function calculates the angle of the vector (x,y)
-
    based on a table lookup and linear interpolation. The table uses a
-
    256 point table covering -45 to +45 degrees and uses symetry to
-
    determine the final angle value in the range of -180 to 180
-
    degrees. Note that this function uses the small angle approximation
-
    for values close to zero. This routine calculates the arc tangent
-
    with an average error of +/- 3.56e-5 degrees (6.21e-7 radians).
-
   *****************************************************************************/
-
   float fast_atan(float x, float y)
   {
 #pragma HLS pipeline
-
 	float x_abs, y_abs, z;
 	float alpha, angle, base_angle;
 	int index;
@@ -203,4 +166,3 @@
 	return (angle);
 
   }
-#endif

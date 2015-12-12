@@ -1,0 +1,600 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2014.1
+  Build 881834 on Fri Apr 04 13:20:25 PM 2014
+  Copyright (C) 2014 Xilinx Inc. All rights reserved.
+================================================================
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'c:/Xilinx/Vivado_HLS/2014.1/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'C4Josh' on host 'wes-server' (Windows NT_amd64 version 6.1) on Sat Dec 12 12:41:41 -0800 2015
+            in directory 'C:/Users/C4Josh/src/p5/HLS/IIR'
+@I [HLS-10] Opening project 'C:/Users/C4Josh/src/p5/HLS/IIR/IIR'.
+@I [HLS-10] Adding design file 'iir.cpp' to the project
+@I [HLS-10] Adding design file 'iir.h' to the project
+@I [HLS-10] Adding test bench file 'iir_in.dat' to the project
+@I [HLS-10] Adding test bench file 'iir_out.dat' to the project
+@I [HLS-10] Adding test bench file 'iir_test.cpp' to the project
+@I [HLS-10] Opening solution 'C:/Users/C4Josh/src/p5/HLS/IIR/IIR/solution1'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+make: `csim.exe' is up to date.
+
+
+Success!!
+
+@I [SIM-1] CSim done with 0 errors.
+@I [HLS-10] Analyzing design file 'iir.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-111] Elapsed time: 11.067 seconds; current memory usage: 47.8 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'iir' ...
+@W [RTGEN-101] Legalizing port name 'iir/input' to 'iir/input_r'.
+@W [RTGEN-101] Legalizing port name 'iir/output' to 'iir/output_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'iir' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.089 seconds; current memory usage: 48.6 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'iir' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 48.6 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'iir' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'iir/input_r' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'iir/output_r' to 'ap_vld'.
+@I [RTGEN-500] Setting interface mode on port 'iir/size' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on function 'iir' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Port 'iir/size' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+@I [RTGEN-100] Generating core module 'iir_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+@I [RTGEN-100] Generating core module 'iir_fmul_32ns_32ns_32_4_max_dsp': 2 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'iir'.
+@I [HLS-111] Elapsed time: 0.078 seconds; current memory usage: 48.6 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'iir'.
+@I [WVHDL-304] Generating RTL VHDL for 'iir'.
+@I [WVLOG-307] Generating RTL Verilog for 'iir'.
+@I [SIM-47] Using XSIM for RTL simulation.
+@I [SIM-14] Instrumenting C test bench ...
+   Build using "c:/Xilinx/Vivado_HLS/2014.1/msys/bin/g++.exe"
+   Compiling apatb_iir.cpp
+   Compiling iir.cpp_pre.cpp.tb.cpp
+   Compiling iir_test.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
+@I [SIM-302] Generating test vectors ... 
+
+
+Success!!
+
+@I [SIM-333] Generating C post check test bench ...
+@I [SIM-12] Generating RTL test bench ...
+@I [SIM-323] Starting verilog simulation. 
+@I [SIM-15] Starting XSIM ...
+
+C:\Users\C4Josh\src\p5\HLS\IIR\IIR\solution1\sim\verilog>call xelab xil_defaultlib.apatb_iir_top -prj iir.prj --lib "ieee_proposed=./ieee_proposed" -s iir  
+Vivado Simulator 2014.1
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: c:/Xilinx/Vivado/2014.1/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_iir_top -prj iir.prj --lib ieee_proposed=./ieee_proposed -s iir 
+Multi-threading is on. Using 22 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "iir.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_iir_top
+INFO: [VRFC 10-165] Analyzing Verilog file "iir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iir
+INFO: [VRFC 10-165] Analyzing Verilog file "iir_fadd_32ns_32ns_32_5_full_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iir_fadd_32ns_32ns_32_5_full_dsp
+INFO: [VRFC 10-165] Analyzing Verilog file "iir_fmul_32ns_32ns_32_4_max_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iir_fmul_32ns_32ns_32_4_max_dsp
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_viv_comp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_comp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_consts.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_exp_table_pkg.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_utils_v3_0/xbip_utils_v3_0_pkg.vhd" into library xbip_utils_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/axi_utils_v2_0_pkg.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult_gen_v12_0_pkg.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_table_pkg.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vt2mUtils.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vt2mComps.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vt2mArch.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vm2Utils.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vm2Comps.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vm2Arch.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/vmsMultCore.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/dsp48MultALine.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/dsp48Mult.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/xMult.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_utils.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv_comp.vhd" into library xbip_pipe_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/delay.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/mux_bus2.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/twos_comp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/carry_chain.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/mux4.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare_gt.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare_eq_im.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare_ne_im.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare_eq.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/special_detect.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/norm_zero_det.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/zero_det_sel.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/shift_msb_first.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_dec_op.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_dec_op_lat.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/lead_zero_encode.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/lead_zero_encode_shift.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/dsp48e1_wrapper.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/dsp48e2_wrapper.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/addsub_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/addsub_dsp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/addsub.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_round_bit.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/renorm_and_round_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/norm_and_round_dsp48e1_sgl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/norm_and_round_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/alignment.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/normalize.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/align_add_dsp48e1_sgl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/align_add.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/three_input_adder.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/delay_line.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/multMxN_lut6.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/op_resize.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/luts.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/dsp_pkg.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/dsp.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/hybrid.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_sp_block_mem.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_dist_mem.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_dp_block_mem.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_syncmem.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_scaled_adder.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm_operation.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/ccm.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult_gen_v12_0_viv.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/multadd.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/compare_ge.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_to_flt_conv_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_to_flt_conv.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_to_fix_conv.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_to_flt_conv_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_to_flt_conv.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_cmp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_sqrt_mant_addsub.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_sqrt_mant.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_sqrt_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_sqrt.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_div_mant_addsub.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_div_mant.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_div_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_div.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_dsp48e1_lat_dbl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_dsp48e1_sgl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_dsp48e1_dbl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_dsp48e2_dbl.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_qq.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult_xx.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/fix_mult.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_v3_0_pkg.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_v3_0_viv.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_round_dsp_opt_full.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_round_dsp_opt_part.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_mult_round.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_mult_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_mult.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_dsp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_lat_align_add.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_lat_norm.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_lat_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add_lat.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_add.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_approx.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_nr.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_reduction_calc.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_eval.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_postprocess.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_specialcase.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip_recomb.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recipsqrt_sp_sqrt_r_rom.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recipsqrt_dp_recsqrt_r_rom.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recipsqrt_dp_m_calc.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_recip.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_addsub.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_addsub_taylor_fabric.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_addsub_taylor_combiner_fabric.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_single_one_detect.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_inproc.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_L_block_pkg.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_L_memory.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_L_block.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_rr_mul_iter.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_rr_mul.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_rr.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_taylor.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_shift_msb_first.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_lead_zero_encode.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_normalize.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_norm.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_rnd.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_specialcase.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log_recomb.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_log.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_specialcase.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_recomb.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_ccm.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_e2A.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_dp_poly.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp_e2zmzm1.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_specialcase.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_round_bit.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_renorm_and_round_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_special_detect.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_add_exp.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_alignment.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_addsub_dsp1.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_addsub_dsp2.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_addsub.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_align_add.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_norm_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_add_logic.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_add.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma_mul.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_fma.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_accum_flt_to_fix.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_accum_bit_encode.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/flt_accum.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/axi_slave_2to1.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/axi_slave_3to1.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/axi_slave_4to1.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd" into library xbip_pipe_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/global_util_pkg.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/axi_utils_comps.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/glb_ifx_master.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0_viv.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/floating_point_v7_0/floating_point_v7_0.vhd" into library floating_point_v7_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_utils_v3_0/xcc_utils_v3_0.vhd" into library xbip_utils_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/glb_srl_fifo.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/axi_utils_v2_0/glb_ifx_slave.vhd" into library axi_utils_v2_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_pipe_v3_0/xbip_pipe_v3_0_comp.vhd" into library xbip_pipe_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_pipe_v3_0/xbip_pipe_v3_0.vhd" into library xbip_pipe_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48_wrapper_v3_0_pkg.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48a_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48a1_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48e_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48e1_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48e2_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_wrapper_v3_0/xbip_dsp48_wrapper_v3_0.vhd" into library xbip_dsp48_wrapper_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_v3_0_viv_comp.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_v3_0_comp.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_rtl.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_synth.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_dsp48_addsub_v3_0/xbip_dsp48_addsub_v3_0.vhd" into library xbip_dsp48_addsub_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_v3_0_pkg.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_v3_0_viv_comp.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_hdl_pkg.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_synth.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_rtl.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_v3_0_viv.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xbip_bram18k_v3_0/xbip_bram18k_v3_0.vhd" into library xbip_bram18k_v3_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult_gen_v12_0_comp.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult_gen_v12_0_viv_comp.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/cc_compare.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult18.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/mult_gen_v12_0/mult_gen_v12_0.vhd" into library mult_gen_v12_0
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xil_defaultlib/iir_ap_fadd_3_full_dsp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "ip/xil_defaultlib/iir_ap_fmul_2_max_dsp.vhd" into library xil_defaultlib
+Starting static elaboration
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/mult_gen_v12_0/mult_gen_v12_0_pkg.vhd:2123]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/mult_gen_v12_0/mult_gen_v12_0_pkg.vhd:2108]
+WARNING: [#UNDEF] Note: "in get_registers " [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7779]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_viv.vhd:745]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:8626]
+WARNING: [VRFC 10-982] library name floating_point_v7_0 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/iir_ap_fadd_3_full_dsp.vhd:189]
+WARNING: [#UNDEF] Note: "in get_registers " [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7779]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_viv.vhd:745]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/xbip_pipe_v3_0/xbip_pipe_v3_0_viv.vhd:259]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:7668]
+WARNING: [VRFC 10-1303] range is empty (null range) [ip/floating_point_v7_0/floating_point_v7_0_pkg.vhd:8626]
+WARNING: [VRFC 10-982] library name floating_point_v7_0 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/iir_ap_fmul_2_max_dsp.vhd:189]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package floating_point_v7_0.floating_point_v7_0_viv_comp
+Compiling package std.textio
+Compiling package xbip_utils_v3_0.xbip_utils_v3_0_pkg
+Compiling package axi_utils_v2_0.axi_utils_v2_0_pkg
+Compiling package floating_point_v7_0.floating_point_v7_0_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_0.floating_point_v7_0_exp_table_pk...
+Compiling package mult_gen_v12_0.mult_gen_v12_0_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_0.floating_point_v7_0_pkg
+Compiling package floating_point_v7_0.flt_utils
+Compiling package xbip_pipe_v3_0.xbip_pipe_v3_0_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(7,0,false,false)\]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",7,0,0,false,...]
+Compiling architecture synth of entity floating_point_v7_0.compare_eq_im [\compare_eq_im("zynq",14,others ...]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",1,0,0,false,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(1,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(24,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(16,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(4,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(48,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(24,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(25,0,false,false)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(0,0,0,0,"NO_RESET","DIR...]
+Compiling architecture rtl of entity floating_point_v7_0.dsp48e1_wrapper [\dsp48e1_wrapper(24,16,48,25,40,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(1,1,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(13,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(27,0,false,false)\]
+Compiling architecture synth of entity floating_point_v7_0.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl("zynq",24...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5("0000000000000000111111110...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5("0000000000000000000000001...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(5,0,false,false)\]
+Compiling architecture rtl of entity floating_point_v7_0.lead_zero_encode_shift [\lead_zero_encode_shift(24,8,(fa...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(1,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(2,1,false,false)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(1,0,0,1,"NO_RESET","DIR...]
+Compiling architecture rtl of entity floating_point_v7_0.dsp48e1_wrapper [\dsp48e1_wrapper(24,16,48,25,35,...]
+Compiling architecture rtl of entity floating_point_v7_0.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(24,8...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(23,1,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(9,0,false,false)\]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",9,0,0,false,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(9,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(10,1,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(4,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(8,0,false,false)\]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE('0','0','0','0')\]
+Compiling architecture fde_v of entity unisim.FDE [\FDE('0')\]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",4,0,1,false,...]
+Compiling architecture synth of entity floating_point_v7_0.compare_eq_im [\compare_eq_im("zynq",23,others ...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(1,1,false,true)\]
+Compiling architecture rtl of entity floating_point_v7_0.special_detect [\special_detect("zynq",false,32,...]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",16,0,1,false...]
+Compiling architecture synth of entity floating_point_v7_0.compare_gt [\compare_gt("zynq",32,false,1)(1...]
+Compiling architecture synth of entity floating_point_v7_0.compare [\compare("zynq",32,true,1)(1,4)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(8,1,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(9,1,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(2,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(2,2,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(2,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(1,2,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(2,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(12,0,false,false)\]
+Compiling architecture rtl of entity floating_point_v7_0.flt_add_exp [\flt_add_exp("zynq",32,8,24,(-21...]
+Compiling architecture synth of entity floating_point_v7_0.flt_dec_op [\flt_dec_op("zynq",32,24,false,1...]
+Compiling architecture rtl of entity floating_point_v7_0.flt_add_dsp [\flt_add_dsp("zynq",32,24,32,24,...]
+Compiling architecture rtl of entity floating_point_v7_0.flt_add [\flt_add("zynq",1,0,0,0,32,24,32...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(3,1,0,0,0,0,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(32,0,false,false)\]
+Compiling architecture xilinx of entity floating_point_v7_0.floating_point_v7_0_viv [\floating_point_v7_0_viv("zynq",...]
+Compiling architecture xilinx of entity floating_point_v7_0.floating_point_v7_0 [\floating_point_v7_0("zynq",1,0,...]
+Compiling architecture iir_ap_fadd_3_full_dsp_arch of entity xil_defaultlib.iir_ap_fadd_3_full_dsp [iir_ap_fadd_3_full_dsp_default]
+Compiling module xil_defaultlib.iir_fadd_32ns_32ns_32_5_full_dsp
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(17,0,false,false)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(0,0,0,0,"NO_RESET","DIR...]
+Compiling architecture rtl of entity floating_point_v7_0.dsp48e1_wrapper [\dsp48e1_wrapper(24,17,16,25,41,...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(0,0,0,0,"NO_RESET","CAS...]
+Compiling architecture rtl of entity floating_point_v7_0.dsp48e1_wrapper [\dsp48e1_wrapper(24,7,48,25,31,f...]
+Compiling architecture struct of entity floating_point_v7_0.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl((false,fal...]
+Compiling architecture rtl of entity floating_point_v7_0.fix_mult [\fix_mult("zynq",flt_pt_fix_mult...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(8,0,false,true)\]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",8,0,0,false,...]
+Compiling architecture struct of entity floating_point_v7_0.carry_chain [\carry_chain("zynq",4,0,0,false,...]
+Compiling architecture synth of entity floating_point_v7_0.compare_eq_im [\compare_eq_im("zynq",23,others ...]
+Compiling architecture rtl of entity floating_point_v7_0.special_detect [\special_detect("zynq",false,32,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(2,1,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(1,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(4,1,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(3,0,false,true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(14,0,false,false)\]
+Compiling architecture rtl of entity floating_point_v7_0.flt_mult_exp [\flt_mult_exp("zynq",false,32,8,...]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(30,0,false,false)\]
+Compiling architecture synth of entity xbip_pipe_v3_0.xbip_pipe_v3_0_viv [\xbip_pipe_v3_0_viv(0,1,0,0,0,0,...]
+Compiling architecture rtl of entity floating_point_v7_0.delay [\delay(18,0,false,false)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(0,0,0,0,"NO_RESET","DIR...]
+Compiling architecture rtl of entity floating_point_v7_0.dsp48e1_wrapper [\dsp48e1_wrapper(30,18,48,25,48,...]
+Compiling architecture struct of entity floating_point_v7_0.flt_round_dsp_opt_full [\flt_round_dsp_opt_full("zynq",(...]
+Compiling architecture rtl of entity floating_point_v7_0.flt_mult_round [\flt_mult_round("zynq",(flt_pt_i...]
+Compiling architecture synth of entity floating_point_v7_0.flt_dec_op_lat [\flt_dec_op_lat("zynq",32,24,tru...]
+Compiling architecture rtl of entity floating_point_v7_0.flt_mult [\flt_mult("zynq",1,3,32,24,32,24...]
+Compiling architecture xilinx of entity floating_point_v7_0.floating_point_v7_0_viv [\floating_point_v7_0_viv("zynq",...]
+Compiling architecture xilinx of entity floating_point_v7_0.floating_point_v7_0 [\floating_point_v7_0("zynq",0,0,...]
+Compiling architecture iir_ap_fmul_2_max_dsp_arch of entity xil_defaultlib.iir_ap_fmul_2_max_dsp [iir_ap_fmul_2_max_dsp_default]
+Compiling module xil_defaultlib.iir_fmul_32ns_32ns_32_4_max_dsp
+Compiling module xil_defaultlib.iir_fmul_32ns_32ns_32_4_max_dsp(...
+Compiling module xil_defaultlib.iir
+Compiling module xil_defaultlib.apatb_iir_top
+Built simulation snapshot iir
+
+****** xsim v2014.1 (64-bit)
+  **** SW Build 881834 on Fri Apr  4 14:15:54 MDT 2014
+  **** IP Build 877625 on Fri Mar 28 16:29:15 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/iir/xsim_script.tcl
+# xsim {iir} -maxdeltaid 10000 -tclbatch {iir.tcl}
+Vivado Simulator 2014.1
+Time resolution is 1 ps
+source iir.tcl
+## run all
+Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Note: ****** INFORMATION ONLY ******
+C_A_WIDTH =               32
+C_A_FRACTION_WIDTH =      24
+C_RESULT_WIDTH =          32
+C_RESULT_FRACTION_WIDTH = 24
+Latency of core =         2
+Maximum latency of core = 6
+AXI interface latency =   0
+Output delay latency =    0
+Internal latency of core excluding handling AXI flow control = 2
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Note: ****** INFORMATION ONLY ******
+C_A_WIDTH =               32
+C_A_FRACTION_WIDTH =      24
+C_RESULT_WIDTH =          32
+C_RESULT_FRACTION_WIDTH = 24
+Latency of core =         2
+Maximum latency of core = 6
+AXI interface latency =   0
+Output delay latency =    0
+Internal latency of core excluding handling AXI flow control = 2
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 0
+Note: ****** INFORMATION ONLY ******
+C_A_WIDTH =               32
+C_A_FRACTION_WIDTH =      24
+C_RESULT_WIDTH =          32
+C_RESULT_FRACTION_WIDTH = 24
+Latency of core =         3
+Maximum latency of core = 11
+AXI interface latency =   0
+Output delay latency =    0
+Internal latency of core excluding handling AXI flow control = 3
+Time: 0 ps  Iteration: 0
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 1
+Warning: OPMODE Input Warning : The OPMODE UUUUUUU with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 0 ps  Iteration: 3  Process: /apatb_iir_top/AESL_inst_iir/iir_fadd_32ns_32ns_32_5_full_dsp_U0/iir_ap_fadd_3_full_dsp_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: c:\Xilinx\Vivado\2014.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 4
+Warning: OPMODE Input Warning : The OPMODE 0UU0U0U with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 0 ps  Iteration: 5  Process: /apatb_iir_top/AESL_inst_iir/iir_fadd_32ns_32ns_32_5_full_dsp_U0/iir_ap_fadd_3_full_dsp_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: c:\Xilinx\Vivado\2014.1\data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Time: 0 ps  Iteration: 7
+$finish called at time : 139445400 ps : File "iir.autotb.v" Line 283
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Dec 12 12:45:54 2015...
+@I [SIM-316] Starting C post checking ...
+
+
+Success!!
+
+@I [SIM-1000] *** C/RTL co-simulation finished: PASS ***
+@I [HLS-112] Total elapsed time: 255.922 seconds; peak memory usage: 48.6 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]

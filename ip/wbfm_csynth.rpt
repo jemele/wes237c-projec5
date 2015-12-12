@@ -1,0 +1,193 @@
+
+
+================================================================
+== Vivado HLS Report for 'wbfm'
+================================================================
+* Date:           Sat Dec 12 07:46:26 2015
+
+* Version:        2014.1 (build date: Fri Apr 04 13:20:25 PM 2014)
+* Project:        hls
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.73|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+----------+
+    |   Latency   |   Interval  | Pipeline |
+    |  min |  max |  min |  max |   Type   |
+    +------+------+------+------+----------+
+    |  2202|  2202|  2167|  2167| dataflow |
+    +------+------+------+------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------+------------------+------+------+------+------+---------+
+        |                             |                  |   Latency   |   Interval  | Pipeline|
+        |           Instance          |      Module      |  min |  max |  min |  max |   Type  |
+        +-----------------------------+------------------+------+------+------+------+---------+
+        |grp_wbfm_Loop_1_proc_fu_134  |wbfm_Loop_1_proc  |    18|    18|    18|    18|   none  |
+        |grp_volk_fu_87               |volk              |    16|    16|    16|    16|   none  |
+        |grp_wbfm_Loop_2_proc_fu_51   |wbfm_Loop_2_proc  |  2166|  2166|  2166|  2166|   none  |
+        +-----------------------------+------------------+------+------+------+------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       0|      2|
+|FIFO             |        0|      -|     145|   1276|
+|Instance         |        5|     55|   29733|  35300|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|      30|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        5|     55|   29908|  36578|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        1|     25|      28|     68|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------+------------------+---------+-------+-------+-------+
+    |       Instance      |      Module      | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +---------------------+------------------+---------+-------+-------+-------+
+    |volk_U0              |volk              |        0|     16|   2175|   3738|
+    |wbfm_Loop_1_proc_U0  |wbfm_Loop_1_proc  |        0|      0|    990|    978|
+    |wbfm_Loop_2_proc_U0  |wbfm_Loop_2_proc  |        5|     39|  26568|  30584|
+    +---------------------+------------------+---------+-------+-------+-------+
+    |Total                |                  |        5|     55|  29733|  35300|
+    +---------------------+------------------+---------+-------+-------+-------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------+---------+---+----+------+-----+---------+
+    |        Name       | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-------------------+---------+---+----+------+-----+---------+
+    |inf_0_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_10_channel_U   |        0|  5|  44|     2|   32|       64|
+    |inf_11_channel_U   |        0|  5|  44|     2|   32|       64|
+    |inf_12_channel_U   |        0|  5|  44|     2|   32|       64|
+    |inf_13_channel_U   |        0|  5|  44|     2|   32|       64|
+    |inf_15_channel_U   |        0|  5|  44|     2|   32|       64|
+    |inf_1_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_2_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_3_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_4_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_5_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_6_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_7_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_8_channel_U    |        0|  5|  44|     2|   32|       64|
+    |inf_9_channel_U    |        0|  5|  44|     2|   32|       64|
+    |outf_0_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_10_channel_U  |        0|  5|  44|     2|   32|       64|
+    |outf_11_channel_U  |        0|  5|  44|     2|   32|       64|
+    |outf_13_channel_U  |        0|  5|  44|     2|   32|       64|
+    |outf_15_channel_U  |        0|  5|  44|     2|   32|       64|
+    |outf_1_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_2_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_3_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_4_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_5_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_6_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_7_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_8_channel_U   |        0|  5|  44|     2|   32|       64|
+    |outf_9_channel_U   |        0|  5|  44|     2|   32|       64|
+    +-------------------+---------+---+----+------+-----+---------+
+    |Total              |        0|145|1276|    58|  928|     1856|
+    +-------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +------------------------------+----------+-------+---+----+------------+------------+
+    |         Variable Name        | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------+----------+-------+---+----+------------+------------+
+    |volk_U0_ap_start              |    and   |      0|  0|   1|           1|           1|
+    |wbfm_Loop_2_proc_U0_ap_start  |    and   |      0|  0|   1|           1|           1|
+    +------------------------------+----------+-------+---+----+------------+------------+
+    |Total                         |          |      0|  0|   2|           2|           2|
+    +------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +-------------------------------------+---+----+-----+-----------+
+    |                 Name                | FF| LUT| Bits| Const Bits|
+    +-------------------------------------+---+----+-----+-----------+
+    |ap_reg_procdone_wbfm_Loop_2_proc_U0  |  1|   0|    1|          0|
+    |ap_reg_ready_inf_0_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_10_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_inf_11_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_inf_12_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_inf_13_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_inf_15_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_inf_1_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_2_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_3_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_4_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_5_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_6_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_7_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_8_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_inf_9_channel_full_n    |  1|   0|    1|          0|
+    |ap_reg_ready_outf_0_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_10_channel_full_n  |  1|   0|    1|          0|
+    |ap_reg_ready_outf_11_channel_full_n  |  1|   0|    1|          0|
+    |ap_reg_ready_outf_13_channel_full_n  |  1|   0|    1|          0|
+    |ap_reg_ready_outf_15_channel_full_n  |  1|   0|    1|          0|
+    |ap_reg_ready_outf_1_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_2_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_3_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_4_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_5_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_6_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_7_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_8_channel_full_n   |  1|   0|    1|          0|
+    |ap_reg_ready_outf_9_channel_full_n   |  1|   0|    1|          0|
+    +-------------------------------------+---+----+-----+-----------+
+    |Total                                | 30|   0|   30|          0|
+    +-------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------+-----+-----+--------------+--------------+--------------+
+|   RTL Ports  | Dir | Bits|   Protocol   | Source Object|    C Type    |
++--------------+-----+-----+--------------+--------------+--------------+
+|in_r_dout     |  in |   32|    ap_fifo   |     in_r     |    pointer   |
+|in_r_empty_n  |  in |    1|    ap_fifo   |     in_r     |    pointer   |
+|in_r_read     | out |    1|    ap_fifo   |     in_r     |    pointer   |
+|out_r_din     | out |   32|    ap_fifo   |     out_r    |    pointer   |
+|out_r_full_n  |  in |    1|    ap_fifo   |     out_r    |    pointer   |
+|out_r_write   | out |    1|    ap_fifo   |     out_r    |    pointer   |
+|ap_clk        |  in |    1| ap_ctrl_none |     wbfm     | return value |
+|ap_rst        |  in |    1| ap_ctrl_none |     wbfm     | return value |
++--------------+-----+-----+--------------+--------------+--------------+
+
