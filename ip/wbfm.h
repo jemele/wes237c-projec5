@@ -5,12 +5,12 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MYCOUNT  64 // it is MYCOUNT/2 complex numbers
+#define MYCOUNT  16 // it is MYCOUNT/2 complex numbers
 
 void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT]);
 void fir(float * result, float input, unsigned short do_filter);
 void iir(float input, float *output, int size);
 float fast_atan(float y, float x);
-void wbfm(float *in, float *out);
+void xillybus_wrapper(int *in, int *out);
 
 #endif

@@ -6,10 +6,14 @@
 open_project hls
 set_top wbfm
 add_files wbfm.c
-add_files xilly_debug.c
+add_files -tb golden.txt
+add_files -tb myinput.txt
+add_files -tb WBFM_test.c
 open_solution "solution1"
 set_part  {xc7z020clg484-1}
 create_clock -period 10
 config_interface -all ap_fifo -expose_global
 source "directives.tcl"
+csim_design
 csynth_design
+cosim_design

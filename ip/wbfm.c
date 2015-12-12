@@ -1,5 +1,4 @@
 #include"wbfm.h"
-#include "xilly_debug.h"
 
 /* FIR */
 //static int d_ntaps = 309;
@@ -108,14 +107,15 @@ static float taps[309] = { 0.00004801760588	, -0.00007127169374	,
 0.00014927044685	, 0.00004278294000	, -0.00008158741548	,
 -0.00016055021842	, -0.00015557580628	, -0.00007127169374	,
 0.00004801760588	 };
-static float shift[309];
-static int d_ntaps = sizeof(shift)/sizeof(*shift);
-static float result_holder = 0;
-
-void fir(float * result, float input, unsigned short do_filter)
+inline void fir(float * result, float input, unsigned short do_filter)
 {
 #pragma HLS pipeline
-	//write your code here
+
+	static float shift[309];
+#pragma HLS array_partition variable=shift block factor=4 dim=1
+	static int d_ntaps = sizeof(shift)/sizeof(*shift);
+	static float result_holder = 0;
+
 	float acc = 0;
 	for (int i=d_ntaps-1;i>=1;i--) {
 		shift[i]=shift[i-1];
@@ -137,7 +137,8 @@ void fir(float * result, float input, unsigned short do_filter)
 /* VOLK */
 inline void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 {
-	for(int i = 0; i <MYCOUNT-4; i+=2){
+	for (int i = 0; i <MYCOUNT-4; i+=2){
+#pragma HLS pipeline
 		const float r1 = inputVector[i];
 		const float i1 = inputVector[i+1];
 		const float r2 = inputVector[i+2];
@@ -150,9 +151,9 @@ inline void volk(float outputVector[MYCOUNT], float inputVector[MYCOUNT])
 /* **** */
 
 /* IIR */
-static float a1 = 0.928849;
-static float b0 = 0.964424;
-static float b1 = 0.964424;
+static const float a1 = 0.928849;
+static const float b0 = 0.964424;
+static const float b1 = 0.964424;
 
 static float input_minus_one = 0.0;
 static float output_minus_one = 0.0;
@@ -164,16 +165,12 @@ inline void iir(float input, float *output, int size)
 	input_minus_one = input;
 }
 /* **** */
-
   #define TAN_MAP_RES 0.003921549 /* (smallest non-zero value in table) */
-
   #define RAD_PER_DEG 0.017453293
-
   #define TAN_MAP_SIZE 255
 
   /* arctangents from 0 to pi/4 radians */
-
-  static float
+  static const float
   fast_atan_table[257] = {
 		  0.000000000, 0.003921549, 0.007842976, 0.011764160,
 		  0.015684990, 0.019605330, 0.023525070, 0.027444090,
@@ -333,11 +330,11 @@ void wbfm(float *in, float *out)
 #pragma AP interface ap_fifo port=out
 #pragma AP interface ap_ctrl_none port=return
 #pragma HLS dataflow
-	xilly_puts("hello world\n");
-
 	int i, j;
 	float inf[MYCOUNT];
+#pragma HLS array_partition variable=inf complete dim=1
 	float outf[MYCOUNT];
+#pragma HLS array_partition variable=outf complete dim=1
 	for (i = 0; i < MYCOUNT; ++i) {
 #pragma HLS pipeline
 		inf[i] = *in++;
